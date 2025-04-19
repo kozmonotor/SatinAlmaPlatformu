@@ -8,7 +8,7 @@
 - [x] Proje yönetim aracını (Jira, Trello, Azure DevOps Boards vb.) belirle ve kur. (GitHub Projects seçildi, temel kurulum yapıldı)
 - [x] Detaylı iş kırılım yapısını (WBS) oluştur.
 - [x] Sprint planlaması veya görev atamalarını yap.
-- [ ] İletişim planını oluştur (toplantı sıklığı, raporlama vb.).
+- [x] İletişim planını oluştur (toplantı sıklığı, raporlama vb.).
 - [ ] Risk analizini yap ve risk yönetimi planını oluştur.
 
 ### 0.2. Gereksinim Detaylandırma ve Analiz

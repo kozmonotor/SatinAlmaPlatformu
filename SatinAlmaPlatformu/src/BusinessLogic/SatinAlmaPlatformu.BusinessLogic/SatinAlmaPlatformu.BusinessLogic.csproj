@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataAccess\SatinAlmaPlatformu.DataAccess\SatinAlmaPlatformu.DataAccess.csproj" />
+    <ProjectReference Include="..\..\Entities\SatinAlmaPlatformu.Entities\SatinAlmaPlatformu.Entities.csproj" />
+    <ProjectReference Include="..\..\Core\SatinAlmaPlatformu.Core\SatinAlmaPlatformu.Core.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Satın Alma Talebiniz Reddedildi</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #dc3545;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        .info {
+            background-color: #e6f7ff;
+            border-left: 4px solid #1890ff;
+            padding: 10px;
+            margin: 20px 0;
+        }
+        .rejection-reason {
+            background-color: #fff2f2;
+            border-left: 4px solid #dc3545;
+            padding: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Satın Alma Platformu</h2>
+        </div>
+        <div class="content">
+            <p>Sayın <strong>{{UserName}}</strong>,</p>
+            
+            <p>Satın alma talebiniz <strong>reddedilmiştir</strong>.</p>
+            
+            <div class="info">
+                <p><strong>Talep Numarası:</strong> {{RequestNumber}}</p>
+                <p><strong>Talep Başlığı:</strong> {{RequestTitle}}</p>
+                <p><strong>Reddeden:</strong> {{RejectedBy}}</p>
+                <p><strong>Red Tarihi:</strong> {{CurrentDate}}</p>
+            </div>
+            
+            <p><strong>Red Nedeni:</strong></p>
+            <div class="rejection-reason">
+                <p>{{RejectionReason}}</p>
+            </div>
+            
+            <p>Talebinizi tekrar düzenleyip yeni bir talep olarak gönderebilirsiniz.</p>
+            
+            <div style="text-align: center;">
+                <a href="{{RequestDetailsLink}}" class="button">Talep Detaylarını Görüntüle</a>
+            </div>
+            
+            <p>Bu e-posta otomatik olarak oluşturulmuştur. Lütfen yanıtlamayınız.</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2025 Satın Alma Platformu - Tüm Hakları Saklıdır.</p>
+        </div>
+    </div>
+</body>
+</html> 

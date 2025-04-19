@@ -1,0 +1,31 @@
+    <!-- SignalR references -->
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+    
+    <!-- Notification scripts -->
+    <script src="~/js/notification-client.js"></script>
+    <script src="~/js/notification-ui.js"></script>
+    
+    <!-- Initialize notifications when user is authenticated -->
+    @if (User.Identity.IsAuthenticated)
+    {
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Bildirim istemcisini başlat
+                notificationClient.initialize('@User.FindFirst(ClaimTypes.NameIdentifier)?.Value');
+                
+                // Bildirim UI'ını başlat
+                notificationUI.initialize({
+                    countBadgeSelector: '#notificationBadge',
+                    notificationContainerSelector: '#notificationDropdown',
+                    notificationListSelector: '#notificationList',
+                    toastContainerSelector: '#toastContainer'
+                });
+            });
+        </script>
+    }
+    
+    @await RenderSectionAsync("Scripts", required: false)
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/notification.css" asp-append-version="true" />
+</body>
+</html> 

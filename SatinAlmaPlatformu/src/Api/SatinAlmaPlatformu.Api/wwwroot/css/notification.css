@@ -1,0 +1,76 @@
+/* Notification styles */
+
+/* Notification badge */
+#notificationBadge {
+    font-size: 0.6rem;
+    padding: 0.25rem 0.4rem;
+}
+
+/* Notification dropdown */
+.notification-dropdown {
+    padding: 0;
+}
+
+/* Notification item */
+.notification-item {
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.notification-item:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.notification-item .bi {
+    font-size: 1.2rem;
+}
+
+/* Mark as read button */
+.mark-read {
+    opacity: 0;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    line-height: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.notification-item:hover .mark-read {
+    opacity: 1;
+}
+
+/* Toast container */
+.toast-container {
+    z-index: 1080;
+}
+
+/* Toast styling */
+.toast {
+    border: none;
+}
+
+.toast:hover {
+    cursor: pointer;
+    opacity: 1 !important;
+}
+
+.toast .toast-header {
+    border-bottom: none;
+}
+
+/* Notification status colors */
+.notification-success {
+    border-left: 3px solid var(--bs-success);
+}
+
+.notification-info {
+    border-left: 3px solid var(--bs-info);
+}
+
+.notification-warning {
+    border-left: 3px solid var(--bs-warning);
+}
+
+.notification-danger {
+    border-left: 3px solid var(--bs-danger);
+} 

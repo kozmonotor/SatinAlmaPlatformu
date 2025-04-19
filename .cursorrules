@@ -1,0 +1,91 @@
+# --- Cursor AI Kuralları: Satın Alma Platformu ---
+
+# Proje Genel Bilgileri
+project:
+  name: Satın Alma Platformu
+  summary: |
+    Kurumsal satın alma süreçlerini dijitalleştiren ve optimize eden bir yazılım çözümü.
+    Kullanıcıların talep oluşturmasını, yöneticilerin onaylamasını, tedarikçilerin teklif vermesini
+    ve tüm sürecin şeffaf yönetimini sağlar.
+  language: Türkçe # Proje ve kod yorumları için varsayılan dil
+
+# Temel Hedefler (AI'ın Kodlama ve Çözüm Yaklaşımını Yönlendirmesi İçin)
+goals:
+  - Manuel işlemleri azaltmak (Dijitalleştirme önceliği)
+  - Onay süreçlerini hızlandırmak (Sistematik ve yapılandırılabilir iş akışları)
+  - Tedarikçi tekliflerinde şeffaflık ve adillik (Karşılaştırma ve değerlendirme mekanizmaları)
+  - İzlenebilirlik ve kayıt tutma (Loglama, durum takibi)
+  - Maliyet optimizasyonu ve tasarruf (Raporlama ve analiz özellikleri)
+
+# Hedef Kullanıcı Rolleri (Özellik Geliştirirken Rol Bazlı Düşünmeyi Teşvik Eder)
+user_roles:
+  - role: Normal Kullanıcı
+    description: Satın alma taleplerini oluşturan kurum çalışanı.
+    permissions_focus: Talep oluşturma, kendi taleplerini takip etme.
+  - role: Satın Alma Personeli
+    description: Talepleri inceleyen, değerlendiren, tedarikçilerle iletişim kuran personel.
+    permissions_focus: Talep yönetimi, tedarikçi iletişimi, teklif değerlendirme.
+  - role: Yönetici
+    description: Satın alma taleplerini onaylayan/reddeden karar verici.
+    permissions_focus: Talep onayı/reddi, onay akışı takibi.
+  - role: Tedarikçi
+    description: Taleplere teklif veren dış firma.
+    permissions_focus: Teklif isteklerini görme, teklif verme, sipariş takibi.
+  - role: Sistem Yöneticisi
+    description: Platformu yöneten ve yapılandıran kullanıcı.
+    permissions_focus: Kullanıcı yönetimi, rol/yetki tanımlama, sistem ayarları.
+
+# Teknik Yığın ve Mimari (Kod Üretimi İçin Kritik Bağlam)
+tech_stack:
+  backend_framework: .NET 8.0
+  architecture: Çok Katmanlı Mimari (N-tier) # Presentation, Business Logic (BLL), Data Access (DAL) katmanlarını varsay
+  database: SQL Server
+  api_style: RESTful API
+  frontend_type: Web tabanlı responsive UI (Framework belirtilmemiş, genel web teknolojileri varsay)
+  notifications: E-posta, Uygulama İçi
+  file_management: Dosya yükleme ve yönetimi gerekliliği
+  security: Güvenli kullanıcı kimlik doğrulama ve yetkilendirme (Rol tabanlı erişim kontrolü - RBAC)
+
+# Temel Özellik Alanları (İstekleri Bu Alanlarla İlişkilendirmeyi Teşvik Eder)
+features:
+  - name: Kullanıcı Yönetimi
+    details: Rol tabanlı erişim (RBAC), hesap yönetimi, departman/yetki tanımlama.
+  - name: Satın Alma Talebi Yönetimi
+    details: Talep oluşturma, detaylı tanım, tahmini bütçe, talep takibi/güncelleme.
+  - name: Onay Süreçleri
+    details: Çok aşamalı, kategorilere göre farklılaşabilen akışlar, bildirimler, geri bildirim/revizyon.
+  - name: Tedarikçi Teklif Yönetimi
+    details: Teklif isteği gönderme, karşılaştırmalı değerlendirme (fiyat, kalite, süre), tedarikçi performansı.
+  - name: Sipariş ve Takip
+    details: Sipariş oluşturma, teslimat takibi, fatura/ödeme yönetimi, tamamlama/değerlendirme.
+  - name: Raporlama ve Analiz
+    details: İstatistikler, harcama raporları (departman/kategori bazlı), onay süresi analizi, maliyet tasarrufu raporları.
+
+# Kapsam Dışı Konular (AI'ın Bu Alanlara Girmesini Engeller)
+out_of_scope:
+  - Muhasebe ve finans yönetimi (detaylı)
+  - İnsan kaynakları süreçleri
+  - Stok ve envanter yönetimi (entegrasyon hariç)
+  - Tedarikçi kalite kontrol süreçleri
+
+# --- AI Etkileşim Kuralları ve Test Talimatları ---
+ai_interaction_rules:
+  # Prompt Sonrası Test/Doğrulama Kuralı:
+  post_prompt_verification:
+    enabled: true
+    instruction: |
+      Her yanıttan sonra (kod önerisi, açıklama, plan vb.), aşağıdaki kontrolleri yaparak yanıtının proje bağlamına uygunluğunu KISACA doğrula ve belirt:
+      1.  **Teknik Uygunluk:** Önerilen kod/yaklaşım `.NET 8`, `N-tier mimari`, `SQL Server` ve `REST API` prensiplerine uygun mu?
+      2.  **Özellik Alanı:** Yanıt, belirtilen `features` (Kullanıcı Yön., Talep Yön., Onay Süreçleri vb.) listesindeki hangi alan(lar) ile ilgili?
+      3.  **Rol Odaklılık:** İlgili `user_roles` (Normal Kullanıcı, Yönetici, Tedarikçi vb.) ve onların olası etkileşimleri düşünüldü mü?
+      4.  **Hedef Uyumu:** Verilen çözüm, projenin `goals` (hızlanma, şeffaflık, maliyet azaltma vb.) hedeflerinden hangisine katkı sağlıyor?
+      5.  **Kapsam Kontrolü:** Yanıt, `out_of_scope` olarak belirtilen alanlara giriyor mu? (Girmemelidir).
+
+  # Genel Davranış Kuralları:
+  general_behavior:
+    - Kod üretirken N-Tier mimari katmanlarını (Presentation, BLL, DAL, Entities/Models) göz önünde bulundur.
+    - Güvenlik (yetkilendirme, veri doğrulama) konularını proaktif olarak düşün.
+    - Veritabanı etkileşimlerinde SQL Server T-SQL veya Entity Framework Core kullanımlarını tercih et.
+    - API tasarımlarında RESTful prensiplerine sadık kal.
+    - Yanıtların net, anlaşılır ve Türkçe olmasına özen göster.
+    - Belirsizlik durumunda, doğru yönlendirme için proje bağlamına (bu kurallara) referans vererek ek bilgi iste.

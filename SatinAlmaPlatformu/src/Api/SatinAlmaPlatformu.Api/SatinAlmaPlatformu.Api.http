@@ -1,0 +1,6 @@
+@SatinAlmaPlatformu.Api_HostAddress = http://localhost:5161
+
+GET {{SatinAlmaPlatformu.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

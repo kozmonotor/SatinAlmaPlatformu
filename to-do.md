@@ -9,7 +9,7 @@
 - [x] Detaylı iş kırılım yapısını (WBS) oluştur.
 - [x] Sprint planlaması veya görev atamalarını yap.
 - [x] İletişim planını oluştur (toplantı sıklığı, raporlama vb.).
-- [ ] Risk analizini yap ve risk yönetimi planını oluştur.
+- [x] Risk analizini yap ve risk yönetimi planını oluştur.
 
 ### 0.2. Gereksinim Detaylandırma ve Analiz
 - [ ] Her bir temel özellik için detaylı fonksiyonel gereksinimleri yaz.

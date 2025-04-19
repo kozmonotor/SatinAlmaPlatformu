@@ -29,7 +29,7 @@ Bu platform şunları sağlar:
 
 1. Repository'yi klonlayın:
 ```
-git clone https://github.com/yourusername/SatinAlmaPlatformu.git
+git clone https://github.com/kozmonotor/SatinAlmaPlatformu.git
 ```
 
 2. Veritabanını oluşturun (Migration'ları çalıştırın):
@@ -56,7 +56,7 @@ Bu proje GitHub Projects ile yönetilmektedir. Kanban tahtasına erişmek için:
 
 ## Lisans
 
-Bu proje [lisans bilgisi eklenecek] altında lisanslanmıştır.
+Bu proje MIT lisansı altında lisanslanmıştır.
 
 ## Bildirim Sistemi
 
@@ -90,4 +90,4 @@ notificationClient.onNotificationReceived(function(notification) {
     console.log('Yeni bildirim:', notification);
     // Özel işlemler...
 });
-``` 
+```

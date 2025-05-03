@@ -61,6 +61,9 @@ SatinAlmaPlatformu-new/
         │   └── constants/            # Sabitler
         │       └── menuItems.ts      # Rol tabanlı menü öğeleri
         ├── package.json              # NPM paket konfigürasyonu
+        ├── cypress/                  # E2E test dosyaları
+        │   └── e2e/                  # End-to-end test senaryoları
+        │       └── dynamic-page-access.cy.js # Rol tabanlı erişim testi
         └── public/                   # Statik dosyalar
 ```
 
@@ -117,6 +120,11 @@ SatinAlmaPlatformu-new/
 8. **Frontend pages/satinalma klasörü ve altındaki tüm sayfa dosyaları detaylı olarak eklendi.**
 9. **Menüdeki /taleplerim ve /yeni-talep linkleri, route ile uyumlu olacak şekilde /kullanici/taleplerim ve /kullanici/yeni-talep olarak güncellendi.**
 10. **TumTaleplerPage.tsx dosyasında formatCurrency fonksiyonu kullanılırken currency parametresi eksikse varsayılan olarak 'TRY' atanacak şekilde güncellendi.**
+11. **Cypress testleri güncellendi**: 
+    - `dynamic-page-access.cy.js` testinde login selectorları düzeltildi (`input[name="username"]`, `input[name="password"]`)
+    - Login sonrası navigasyon menüsünü kontrol eden assertion eklendi: `cy.get('nav, .MuiDrawer-root, .sidebar', { timeout: 10000 }).should('exist')`
+    - Tüm menü linklerini ve butonları test eden kapsamlı otomatik test senaryosu eklendi
+    - Her kullanıcı rolü için (NormalKullanici, SatinAlmaPersoneli, Yonetici, Tedarikci, Admin) tüm sayfalara erişim testi eklendi
 
 ## Çalıştırma Talimatları
 
@@ -137,6 +145,17 @@ cd SatinAlmaPlatformu-new/src/satinalma-frontend
 npm start
 ```
 Frontend http://localhost:3000 adresinde çalışacaktır.
+
+### E2E Testleri
+Cypress E2E testleri şu şekilde çalıştırılabilir:
+```
+cd SatinAlmaPlatformu-new/src/satinalma-frontend
+npx cypress run --spec cypress/e2e/dynamic-page-access.cy.js
+```
+Veya UI ile çalıştırmak için:
+```
+npx cypress open
+```
 
 ### Test Kullanıcıları
 Sistem şu demo kullanıcılarıyla test edilebilir:
@@ -191,19 +210,10 @@ Backend'de JWT token tabanlı kimlik doğrulama sistemi kullanılmaktadır. Kull
    - Frontend build sürecinde tip hatası düzeltildi
    - API ve Frontend entegrasyonu tamamlandı
 
-# Proje Dosya ve Klasör Yapısı
-
-- cypress/
-  - e2e/
-    - dynamic-page-access.cy.js
-- cypress.config.js
-
-## Yapılan Değişiklikler
-- `cypress/e2e/dynamic-page-access.cy.js` dosyasında login selectorları (`input[name="username"]`, `input[name="password"]`) olarak güncellendi.
-- TumTaleplerPage.tsx dosyasında formatCurrency fonksiyonu kullanılırken currency parametresi eksikse varsayılan olarak 'TRY' atanacak şekilde güncellendi.
-- Tüm işlemler sadece `D:\selcuk\SatinAlmaPlatformu-new\src\satinalma-frontend` dizininde yapıldı.
-- Yanlışlıkla oluşturulan `D:\selcuk\cypress\e2e\dynamic-page-access.cy.js` dosyası silindi. Artık sadece ana proje dizininde işlem yapılacak.
-- `cypress/e2e/dynamic-page-access.cy.js` dosyasında login sonrası menü veya ana layout'un varlığını kontrol eden assertion eklendi: `cy.get('nav, .MuiDrawer-root, .sidebar', { timeout: 10000 }).should('exist');`
+5. **Cypress test senaryoları eklendi**:
+   - Rol bazlı erişim kontrolü için kapsamlı testler yazıldı
+   - Menü ve buton erişilebilirliği otomatik olarak test edilecek
+   - Tüm test senaryoları için hata ve başarı logları eklendi
 
 # Proje Yapısı
 
@@ -236,7 +246,7 @@ Backend'de JWT token tabanlı kimlik doğrulama sistemi kullanılmaktadır. Kull
   - App.tsx (Ana uygulama ve yönlendirme yapılandırması)
 - cypress/
   - e2e/
-    - dynamic-page-access.cy.js
+    - dynamic-page-access.cy.js (Rol bazlı erişim kontrolü test senaryosu)
   - screenshots/
 
 ## Ana Düzen (MainLayout) Bileşeni
@@ -250,5 +260,6 @@ Backend'de JWT token tabanlı kimlik doğrulama sistemi kullanılmaktadır. Kull
 Uygulama, React Router kullanarak yönlendirme yapısını kurmuştur. Tüm korumalı sayfalar `MainLayout` içinde görüntülenir.
 
 ## Yapılan Değişiklikler
-- Proje yapısı dosyası oluşturuldu.
+- Proje yapısı dosyası oluşturuldu ve GitHub'a yüklendi.
 - Ana düzen bileşeni ve yönlendirme yapısı hakkında bilgiler eklendi.
+- Cypress test senaryoları içeren `dynamic-page-access.cy.js` dosyası güncellendi ve GitHub'a yüklendi.
